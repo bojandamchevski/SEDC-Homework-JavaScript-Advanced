@@ -1,0 +1,11 @@
+#table1,tr,td {
+    border: 5px;
+    border-color: blue;
+    border-style: solid;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead {
+    font-weight: bold;
+}
