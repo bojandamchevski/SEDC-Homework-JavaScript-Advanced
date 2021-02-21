@@ -6,8 +6,8 @@ $(document).ready(() => {
             success: function (data) {
                 let response = JSON.parse(data);
                 console.log("===== Students with an average grade higher than 3 =====");
-                let averageGradeHigherThan3 = response.filter(student => student.averageGrade > 3);
-                averageGradeHigherThan3.forEach(student => console.log(`Name of Student: ${student.firstName} Grade: ${student.averageGrade}`));
+                let studentGradeAbove3 = response.filter(s=>s.averageGrade > 3)
+                .forEach(s=>console.log(`${s.firstName} ${s.lastName} ${s.averageGrade}`));
 
                 console.log("===== Female students with an average grade of 5 =====");
                 let femaleStudentsWithAverageGradeOf5 = response.filter(student => student.averageGrade == 5 && student.gender === "Female");
@@ -19,12 +19,9 @@ $(document).ready(() => {
 
                 console.log("===== Average grades of female students over the age 24 =====");
                 let averageGradeOfFemale24 = response.filter(student => student.age > 24 && student.gender === "Female");
-                function averageGrade(sum, grade) {
-                    return sum += grade;
-                }
-                let averageGradeOfFemale24Map = averageGradeOfFemale24.map(s => s.averageGrade)
-                    .reduce(averageGrade, 0);
-                let average = averageGradeOfFemale24Map / averageGradeOfFemale24.length;
+                let averageGradeOfFemale24Map = averageGradeOfFemale24.map(s => s.averageGrade);
+                let sumOfGrades = averageGradeOfFemale24Map.reduce((sum, grade) => sum += grade, 0);
+                let average = sumOfGrades / averageGradeOfFemale24Map.length;
                 console.log(`The average grade of female students above the age 24 is: ${average}`);
 
                 console.log("===== Male students which name starts with B and average grade over 2 =====");

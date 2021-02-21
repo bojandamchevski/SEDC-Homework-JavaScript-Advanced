@@ -23,36 +23,35 @@ let products = [
     new Product("Speakers", "Technology", true, 22000)
 ];
 
-console.log("1");
+console.log("===== Price greater than 20 =====");
 let allProdutsWithPriceAbove20 = products.filter(p=>p.price>20);
 allProdutsWithPriceAbove20.forEach(p=>console.log(`${p.name} ${p.price}`));
 console.log(allProdutsWithPriceAbove20);
 
-console.log("2");
+console.log("===== Category Food on discount =====");
 let allProductsOnDiscount = products.filter(p => p.hasDiscount === true);
 allProductsOnDiscount.forEach(p=>console.log(`${p.name} ${p.price}`));
 
-console.log("3");
+console.log("===== Average price of all products that are on discount =====");
 let discountMap = allProductsOnDiscount.map(p => p.price);
 let sumOfPrice = discountMap.reduce((sum, price) => sum += price, 0);
 let averagePrice = sumOfPrice / discountMap.length;
 console.log(averagePrice);
 
-console.log("4");
+console.log("===== Products which name starts with a vowel =====");
 let notOnDiscount = products.filter(p=>p.hasDiscount === false);
 let notOnDiscountMap = notOnDiscount.map(p=>`${p.name} ${p.price}`);
-console.log(notOnDiscountMap);
 let startWithVowel = notOnDiscountMap.filter(name=>/^[aeiou]/i.test(name),0);
 console.log(startWithVowel);
 
-console.log("5");
+console.log("===== Sort the products by price ascending =====");
 let copiedArray = [];
 for(let i = 0; i < products.length; i++){
     copiedArray.push(products[i]);
 }
 
-// let sortedAscending = copiedArray.sort((a,b)=>a.price - b.price)
-// .forEach(p=>console.log(`${p.name} ${p.price}`));
+let sortedAscending = copiedArray.sort((a,b)=>a.price - b.price)
+.forEach(p=>console.log(`${p.name} ${p.price}`));
 
 // console.log("===== Price greater than 20 =====");
 // let productsWithPriceGreaterThan20 = products.filter(product => product.price > 20);
