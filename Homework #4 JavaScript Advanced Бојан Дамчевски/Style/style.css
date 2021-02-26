@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: gainsboro;
+}
+
+h1 {
+    text-align: center;
+    color: darkslategrey;
+}
+
+ul {
+    color: darkslategrey;
+    padding: 50px;
+}
+
+#ul1 {
+    padding-bottom: 20px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: green;
+    color: yellow;
+    font-weight: 600;
+}
+
+#main {
+    padding-top: 30px;
+    text-align: center;
+}
+
+span {
+    text-transform: uppercase;
+    color: red;
+}
