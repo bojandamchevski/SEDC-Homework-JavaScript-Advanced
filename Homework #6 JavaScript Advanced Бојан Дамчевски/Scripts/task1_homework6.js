@@ -18,7 +18,8 @@ function Library(name, books, address) {
         }
         if (this.books.length > 0) {
             // return this.books.forEach(book => console.log(book)); // moze i vaka
-            let books = this.books.filter(b=>b.title).map(b=>b.title);
+            let books = this.books.filter(b=>b.title)
+            .map(b=>b.title);
             console.log(books);
         }
     };
