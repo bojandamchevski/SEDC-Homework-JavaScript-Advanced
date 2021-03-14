@@ -1,0 +1,12 @@
+[
+    {
+        "fullName": "John Smith",
+        "academy": "SEDC",
+        "age": "34"
+    },
+    {
+        "fullName": "Joey Tribianni",
+        "academy": "SEDC",
+        "age": "30"
+    }
+]
